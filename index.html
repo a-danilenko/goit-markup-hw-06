@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/styles.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" />
 </head>
-<body>
+<body data-body>
     <!-- шапка сайта -->
     <header>
         <div class="container page-header">
@@ -47,7 +47,7 @@
         <div class="container">
             <section class="background-img">
                 <h1>Эфективные решения </br>для вашего бизнеса</h1>
-                <a href="" class="order-button">Заказать услугу</a>
+                <button href="" class="order-button" data-modal-open >Заказать услугу</button>
             </section>
             <section class="features">
                 <ul class="features-list">
@@ -360,38 +360,47 @@
             </article>
         </div>
     </footer>
-    <form autocomplete="on" class="form js-speaker-form">
+    <form autocomplete="on" class="form js-speaker-form is-hidden" data-modal>
         <h2 class="form-title">Оставьте свои данные, мы Вам перезвоним</h2>
+        <span class="close-button" data-modal-close>
+            <svg class="icon">
+                <use href="./images/sprite.svg#x"></use>
+            </svg>
+        </span>
         <div class="form-field">
-            <input type="name" name="name" id="name" class="form-input">
+            <input type="name" name="name" id="name" class="form-input" placeholder=" ">
             <label for="name" class="form-label">Имя</label>
             <svg class="form-icon" width=12px height=12px>
                 <use href="./images/sprite.svg#man"></use>
             </svg>
         </div>
         <div class="form-field">
-            <input type="tel" name="phone" id="phone" class="form-input">
+            <input type="tel" name="phone" id="phone" class="form-input" placeholder=" ">
             <label for="phone" class="form-label">Телефон</label>
             <svg class="form-icon" width=13px height=13px>
                 <use href="./images/sprite.svg#phone-black"></use>
             </svg>
         </div>
         <div class="form-field">
-            <input type="email" name="mail" id="mail" class="form-input">
+            <input type="email" name="mail" id="mail" class="form-input" placeholder=" ">
             <label for="mail" class="form-label">Почта</label>
             <svg class="form-icon" width=15px height=12px>
                 <use href="./images/sprite.svg#email-black"></use>
             </svg>
         </div>
         <div class="form-field form-field-textarea">
-            <textarea name="comments" id="comments" class="form-textarea"></textarea>
-            <label for="comments" class="form-label">Коментарий</label>
+            <textarea name="comments" id="comments" class="form-input form-textarea" placeholder=" "></textarea>
+            <label for="comments" class="form-label-textarea">Коментарий</label>
         </div>
-        <label class="form-label">
-            <input type="checkbox" name="">
-            Соглашаюсь с рассылкой и принимаю <a href="">Условия договора</a>
-        </label>
-        <button type="submit" class="form-button">Отправить</button>
+        <div class="checkbox">
+            <label class="checkbox-field">
+                <input type="checkbox" name="policy" class="form-input-checkbox">
+                <span class="checkbox-label">
+                    Соглашаюсь с рассылкой и принимаю <a href="" class="form-link"> Условия договора</a>
+                </span>
+            </label>
+        </div>
+        <button type="submit" class="form-button" data-modal-close>Отправить</button>
     </form>
     <script src="./js/modal.js"></script>
     <script>
