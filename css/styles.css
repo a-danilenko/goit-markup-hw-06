@@ -1028,7 +1028,7 @@ footer {
 .form-input-checkbox:checked ~ .checkbox-label::before {
   background-color: #2196F3;
   border-color: transparent;
-  background-image: url(../images/sprite.svg#checkbox);
+  background-image: url(../images/check.svg);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
